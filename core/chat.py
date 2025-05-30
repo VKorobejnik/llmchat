@@ -54,7 +54,7 @@ def show():
     if not deepseek:
         start_message = "Message GPT-4o..."
     
-    if prompt := st.chat_input(start_message):
+    if prompt := st.chat_input(start_message, accept_file=True):
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
